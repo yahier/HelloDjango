@@ -24,7 +24,7 @@ def updateIndex(index):
     conn = getDBConnect();
     cursor = conn.cursor();
     line = cursor.execute(sql);
-    print("影响的行数" + str(line))
+    print("影响的行数:" + str(line))
     conn.commit();
 
 
