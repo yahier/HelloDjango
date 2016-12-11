@@ -20,6 +20,7 @@ urlpatterns = patterns('',
                        ('^hello', hello),
                        ('^ya', ya),
                        ('time/$', current_datetime),
-                       ('people', people),
+                       ('gallery', gallery),
+                       ('html', html),
 
 )
