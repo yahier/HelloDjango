@@ -1,5 +1,8 @@
 学习笔记目录
 
+
+
 1.Django可识别的视图需要满足以下两个条件
 第一个参数的类型是HtppRequest.
 返回HttpResponse实例
+
