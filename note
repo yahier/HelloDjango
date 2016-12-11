@@ -1,6 +1,13 @@
 学习笔记目录
 
+3.模板语法
+模板文件夹路径申明。在settings.py文件中增加
+TEMPLATES_DIRS = os.path.join(os.path.dirname(__file__), 'templates')
+模板是html后缀，可以是普通的html，但也可以有django的独特语法 特性
+在settings.py文件的INSTALLED_APPS下面添加了hello.就可以跳转到模板了。
 
+
+2.settings文件中的DEBUG值，如果设置为False,网页上就不会看到出错信息，本来想试一下，但还需要先配置host.
 
 1.Django可识别的视图需要满足以下两个条件
 第一个参数的类型是HtppRequest.

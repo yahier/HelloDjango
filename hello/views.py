@@ -12,7 +12,8 @@ import datetime
 
 # Create your views here.
 def hello(request):
-    return HttpResponse("<h1>Hello,World HERE IS CHINA yay</h1")
+    return HttpResponse("<h1>Hello,World</h1")
+
 
 def ya(request):
     return HttpResponse("hello,yahier")
@@ -25,11 +26,19 @@ def gallery(request):
 
 
 def html(request):
-    return render_to_response('templates/gallery.html')
+    return render_to_response('2.html')
+
 
 def current_datetime(request):
     now = datetime.datetime.now()
     html = "<html><body>It is now %s.</body></html>" % now
     return HttpResponse(html)
 
+
+def hello1(request,num):
+    try:
+        num = int(num)
+    except ValueError:
+        raise Http404()
+    return HttpResponse("hello,hello1")
 

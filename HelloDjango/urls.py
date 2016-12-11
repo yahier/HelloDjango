@@ -17,10 +17,11 @@ from django.conf.urls import patterns, include, url
 from hello.views import *
 
 urlpatterns = patterns('',
-                       ('^hello', hello),
+                       ('^hello/$', hello),
                        ('^ya', ya),
                        ('time/$', current_datetime),
                        ('gallery', gallery),
+                       ('hello/(\d+)', hello1),
                        ('html', html),
 
 )
