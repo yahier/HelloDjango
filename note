@@ -1,4 +1,9 @@
 学习笔记目录
+
+5.创建django admin
+python manage.py createsuperuser #会提示输入。都完成之后可以打开http://localhost:8000/admin/ 进行登录管理
+当前我的设置是 admin 123456 yahier@qq.com
+
 4.模型  (参考https://docs.djangoproject.com/en/1.10/intro/tutorial02/)
 建立好数据库配置(settings文件的DATABASES部分)和模型(入models文件)。就可以执行以下命令了
 $ python manage.py makemigrations hello
