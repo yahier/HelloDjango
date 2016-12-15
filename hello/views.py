@@ -11,6 +11,20 @@ from django.template import loader
 from django.views import generic
 from .models import Choice, Question
 from django.shortcuts import get_object_or_404, render
+import json
+
+
+#返回json数据
+def getJson(request):
+    response_data = {}
+    response_data['result'] = 'failed'
+    response_data['message'] = 'You messed up'
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+
+#将对象当作json返回
+def getClassJaon(request):
+    return HttpResponse('吃饭啦')
 
 
 def gallery(request):

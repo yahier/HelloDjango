@@ -6,7 +6,7 @@ from hello.views import *
 
 urlpatterns = [
     url('time/$', current_datetime),
-    url('html', index),
+    url('html', getJson),
     # ex: /polls/5/
     url(r'^(?P<question_id>[0-9]+)/$', detail, name='detail'),
     #/eg params/?p1=china&p2=2012  测试参数
