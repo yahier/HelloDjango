@@ -78,16 +78,25 @@ WSGI_APPLICATION = 'HelloDjango.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 #win g470
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'USER': 'root',
+#         'PASSWORD': '123456',
+#         'NAME': 'yahier',
+#         'HOST': 'localhost'
+#     }
+# }
+#win PC
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': '2008',
         'NAME': 'yahier',
         'HOST': 'localhost'
     }
 }
-
 #
 # DATABASES = {
 #     'default': {

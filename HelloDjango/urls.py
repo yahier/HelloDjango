@@ -13,15 +13,17 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import  url
-from hello.views import *
+from django.conf.urls import url
 from django.contrib import admin
-
+from hello.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^ya', ya),
     url('^hello/$', hello),
     url('time/$', current_datetime),
-    url('html', html),
+    url('html', index),
+
+    # ex: /polls/5/
+    url(r'^(?P<question_id>[0-9]+)/$', detail, name='detail'),
 ]

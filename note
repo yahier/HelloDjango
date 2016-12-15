@@ -1,4 +1,5 @@
 学习笔记目录
+6.当前hello app并没有作为独立的运行项目
 
 5.创建django admin
 python manage.py createsuperuser #会提示输入。都完成之后可以打开http://localhost:8000/admin/ 进行登录管理
@@ -9,6 +10,7 @@ python manage.py createsuperuser #会提示输入。都完成之后可以打开h
 $ python manage.py makemigrations hello
 $ python manage.py sqlmigrate hello 0001  //0001由前面步骤生成
 $ python manage.py migrate  //这一步执行完成，数据库建立对应表
+
 # Run python manage.py makemigrations to create migrations for those changes
 # Run python manage.py migrate to apply those changes to the database.
 
