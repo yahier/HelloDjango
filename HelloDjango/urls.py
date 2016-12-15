@@ -20,14 +20,5 @@ from django.conf.urls import include, url
 urlpatterns = [
     # important
     url(r'^hello/', include('hello.urls')),
-
     url(r'^admin/', admin.site.urls),
-    url('^ya', ya),
-    url('^hello/$', hello),
-    url('time/$', current_datetime),
-    url('html', index),
-
-    # ex: /polls/5/
-    url(r'^(?P<question_id>[0-9]+)/$', detail, name='detail'),
-
 ]

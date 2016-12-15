@@ -13,15 +13,6 @@ from .models import Choice, Question
 from django.shortcuts import get_object_or_404, render
 
 
-# Create your views here.
-def hello(request):
-    return HttpResponse("<h1>Hello,World</h1")
-
-
-def ya(request):
-    return HttpResponse("hello,yahier")
-
-
 def gallery(request):
     t = get_template('templates/gallery.html')
     html = t.render(Context())
@@ -37,13 +28,20 @@ def current_datetime(request):
     html = "<html><body>It is now %s.</body></html>" % now
     return HttpResponse(html)
 
-
-def hello1(request,num):
+#测试参数和异常
+def hi(request, num):
     try:
         num = int(num)
     except ValueError:
         raise Http404()
-    return HttpResponse("hello,hello1")
+    return HttpResponse("hi " + str(num))
+
+
+def helloParams(request):
+    p1 = request.GET.get('p1')
+    p2 = request.GET.get('p2')
+    return HttpResponse("p1 = " + p1 + "; p2 = " + p2)
+
 
 
 def detail(request, question_id):
@@ -59,7 +57,7 @@ def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
 
-#以下方法没有能成功调用
+# 以下方法没有能成功调用
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     template = loader.get_template('index.html')
@@ -75,19 +73,19 @@ class DetailView(generic.DetailView):
 
 
 def vote(request, question_id):
-        question = get_object_or_404(Question, pk=question_id)
-        try:
-            selected_choice = question.choice_set.get(pk=request.POST['choice'])
-        except (KeyError, Choice.DoesNotExist):
-            # Redisplay the question voting form.
-            return render(request, 'detail.html', {
-                'question': question,
-                'error_message': "You didn't select a choice.",
-            })
-        else:
-            selected_choice.votes += 1
-            selected_choice.save()
-            # Always return an HttpResponseRedirect after successfully dealing
-            # with POST data. This prevents data from being posted twice if a
-            # user hits the Back button.
-            return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+    question = get_object_or_404(Question, pk=question_id)
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])
+    except (KeyError, Choice.DoesNotExist):
+        # Redisplay the question voting form.
+        return render(request, 'detail.html', {
+            'question': question,
+            'error_message': "You didn't select a choice.",
+        })
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))

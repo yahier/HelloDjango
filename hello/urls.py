@@ -5,7 +5,14 @@ from . import views
 from hello.views import *
 
 urlpatterns = [
-    url('^ll/$', hello),
+    url('time/$', current_datetime),
+    url('html', index),
+    # ex: /polls/5/
+    url(r'^(?P<question_id>[0-9]+)/$', detail, name='detail'),
+    #/eg params/?p1=china&p2=2012  测试参数
+    url(r'^params/$', helloParams),
+    #eg hi/2 测试后缀参数传递
+    url(r'^hi/(.+)/$', hi),
     # ex: /polls/
     url(r'^$', views.index, name='index'),
     # ex: /polls/5/

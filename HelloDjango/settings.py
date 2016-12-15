@@ -88,15 +88,15 @@ WSGI_APPLICATION = 'HelloDjango.wsgi.application'
 #     }
 # }
 #win PC
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'USER': 'root',
-        'PASSWORD': '2008',
-        'NAME': 'yahier',
-        'HOST': 'localhost'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'USER': 'root',
+#         'PASSWORD': '2008',
+#         'NAME': 'yahier',
+#         'HOST': 'localhost'
+#     }
+# }
 #
 # DATABASES = {
 #     'default': {
