@@ -4,6 +4,7 @@ from django.conf.urls import url
 from . import views
 from hello.views import *
 
+
 urlpatterns = [
     url('time/$', current_datetime),
     url('html', getJson),

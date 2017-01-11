@@ -97,16 +97,17 @@ WSGI_APPLICATION = 'HelloDjango.wsgi.application'
 #         'HOST': 'localhost'
 #     }
 # }
-#
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'USER': 'root',
-#         'PASSWORD': '123456',
-#         'NAME': 'yahier',
-#         'HOST': 'localhost'
-#     }
-# }
+
+#mac
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': '008',
+        'NAME': 'yahier',
+        'HOST': 'localhost'
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
