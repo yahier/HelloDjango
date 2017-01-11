@@ -4,6 +4,7 @@ from django.utils import timezone
 import datetime
 #测试发现，文件名不是任意的
 
+
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
@@ -21,9 +22,24 @@ class Choice(models.Model):
         return self.choice_text
 
 
+def save():
+    q = Question(question_text="What's 8", pub_date=timezone.now())
+    q.save()
 
-#可以成功写入英文。但数据提示需要配置这个相关 DEFAULT_INDEX_TABLESPACE
-#两个字段都是中文的话，有时成功，有时候不成功
+#这些打印没有在控制台，而直接打印在了命令行。、而且运行模块时就运行了这个这些方法，单独运行反而没有效果
+def query():
+    ques = Question.objects.all()
+    for q in ques:
+        print(q.question_text)
 
-#默认还是不执行了
-#test()
+def query1():
+    ques = Question.objects.get(id=2)
+    print(ques.question_text)
+
+
+
+
+
+
+
+

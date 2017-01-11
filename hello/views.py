@@ -9,7 +9,7 @@ from django.shortcuts import render_to_response
 import datetime
 from django.template import loader
 from django.views import generic
-from .models import Choice, Question
+from models import Choice, Question
 from django.shortcuts import get_object_or_404, render
 import json
 
@@ -70,6 +70,12 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
+#将数据库数据，查询后，按json格式返回
+def query1(request):
+    ques = Question.objects.get(id=4)
+    response_data = {}
+    response_data['ques'] = ques.question_text
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 # 以下方法没有能成功调用
 def index(request):
