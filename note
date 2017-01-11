@@ -1,7 +1,7 @@
 学习笔记目录
 6.当前hello app并没有作为独立的运行项目
 
-5.创建django admin
+5.创建django admin  (mac也建立成功)
 python manage.py createsuperuser #会提示输入。都完成之后可以打开http://localhost:8000/admin/ 进行登录管理
 当前我的设置是 admin 123456 yahier@qq.com
 

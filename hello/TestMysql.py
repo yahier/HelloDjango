@@ -11,7 +11,7 @@ def insert():
 
 
 def getDBConnect():
-    return MySQLdb.connect(host="localhost", user="root", passwd="2008", db="yahier");
+    return MySQLdb.connect(host="localhost", user="root", passwd="008", db="yahier");
 
 
 def getDBCursor():
