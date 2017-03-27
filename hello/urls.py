@@ -5,6 +5,7 @@ from views import *
 
 
 urlpatterns = [
+    url('object', queryObject),# 测试输出对象
     url('time/$', current_datetime),
     url('html', getJson),
     url('query1', query1),
