@@ -23,7 +23,7 @@ class Choice(models.Model):
 
 
 def save():
-    q = Question(question_text="What's 8", pub_date=timezone.now())
+    q = Question(question_text="who is bingo", pub_date=timezone.now())
     q.save()
 
 #这些打印没有在控制台，而直接打印在了命令行。、而且运行模块时就运行了这个这些方法，单独运行反而没有效果
@@ -35,6 +35,7 @@ def query():
 def query1():
     ques = Question.objects.get(id=2)
     print(ques.question_text)
+
 
 
 

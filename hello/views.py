@@ -72,7 +72,7 @@ def vote(request, question_id):
 
 #将数据库数据，查询后，按json格式返回
 def query1(request):
-    ques = Question.objects.get(id=4)
+    ques = Question.objects.get(id=1)
     response_data = {}
     response_data['ques'] = ques.question_text
     return HttpResponse(json.dumps(response_data), content_type="application/json")

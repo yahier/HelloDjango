@@ -1,4 +1,4 @@
-#coding:utf-8
+# coding:utf-8
 from django.conf.urls import url
 
 from views import *
@@ -10,9 +10,9 @@ urlpatterns = [
     url('query1', query1),
     # ex: /polls/5/
     url(r'^(?P<question_id>[0-9]+)/$', detail, name='detail'),
-    #/eg params/?p1=china&p2=2012  测试参数
+    # eg params/?p1=china&p2=2012  测试参数
     url(r'^params/$', helloParams),
-    #eg hi/2 测试后缀参数传递
+    # eg hi/2 测试后缀参数传递
     url(r'^hi/(.+)/$', hi),
     # ex: /polls/
     url(r'^$', index, name='index'),
