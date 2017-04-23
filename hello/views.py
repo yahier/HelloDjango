@@ -14,13 +14,20 @@ from models import Choice, Question
 from django.shortcuts import get_object_or_404, render
 import json
 from People import People
+from django.utils import timezone
 
 
-# 返回json数据
+# 返回json数据。并且是查询数据库的结果返回。棒棒的
 def getJson(request):
     response_data = {}
-    response_data['result'] = 'failed'
-    response_data['message'] = 'You messed up'
+
+    ques = Question.objects.get(id=4)
+    response_data['id'] = ques.id
+    response_data['message'] = ques.question_text
+
+    # q = Question(question_text="add in views", pub_date=timezone.now())
+    # q.save()
+
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 
