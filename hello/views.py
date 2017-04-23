@@ -36,12 +36,6 @@ def getClassJaon(request):
     return HttpResponse('吃饭啦')
 
 
-def gallery(request):
-    t = get_template('templates/gallery.html')
-    html = t.render(Context())
-    return HttpResponse(html)
-
-
 def html(request):
     return render_to_response('test.html')
 
@@ -111,7 +105,13 @@ def obj2dict(obj):
     return res
 
 
+
 # 以下方法没有能成功调用
+def gallery(request):
+    t = get_template('templates/test.html')
+    html = t.render(Context())
+    return HttpResponse(html)
+
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     template = loader.get_template('index.html')
